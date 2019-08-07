@@ -89,9 +89,11 @@ Page({
     });
   },
 
-  highsetting: function(){
+  highsetting: function(e){
+    var data = e.currentTarget.dataset;
+    console.log(data);
     wx.navigateTo({
-      url: '/pages/home/high/index',
+      url: '/pages/home/high/index?' + 'devid=' + data.devid,
     })
   },
 

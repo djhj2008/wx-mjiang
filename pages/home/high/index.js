@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    flag:0,
+    desc:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var devid = options.devid;
+    console.log(devid);
+  },
 
+  bindFormSubmit: function (e) {
+    var flag = e.detail.value.flag;
+    var desc = e.detail.value.textarea;
+    console.log("bindFormSubmit");
+    console.log(flag);
+    console.log(desc);
   },
 
   /**

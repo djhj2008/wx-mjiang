@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
 	"appid": "wxf7834d429f88d00a",
-	"projectname": "wxmjiang",
+	"projectname": "wx-mjiang",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

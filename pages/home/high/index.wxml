@@ -7,33 +7,37 @@
       </view>
     </view>
   </view>
-  <radio-group class="radio-group flex solid-bottom padding justify-around">
+<form bindsubmit="bindFormSubmit">
+  <radio-group class="radio-group flex solid-bottom padding justify-around" name="flag">
     <view class="flex-sub  margin-left-lg">
-      <radio class="green radio" checked></radio><view class="cu-tag bg-green margin-left-sm">正常</view>
+      <radio class="green radio" value="0" checked></radio><view class="cu-tag bg-green margin-left-sm">正常</view>
     </view>
     <view class="flex-sub  margin-left-lg">
-      <radio class="green radio"></radio><view class="cu-tag bg-red  margin-left-sm">生病</view>
+      <radio class="green radio" value="1" ></radio><view class="cu-tag bg-red  margin-left-sm">生病</view>
     </view>
 	</radio-group>
+
 <view class="cu-bar bg-white solid-bottom">
   <view class="action">
     <text class="cuIcon-title text-blue"></text>病情描述
   </view>
 </view>
 	<view class="cu-form-group solid-bottom">
-		<textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入"></textarea>
+		<textarea maxlength="-1" name="textarea" placeholder="请输入"></textarea>
 	</view>
   <view class="padding flex flex-direction">
-  <button class="cu-btn bg-blue" bindtap="highsetting">提交
+  <button class="cu-btn bg-blue" form-type="submit" >提交
   </button>
   </view>
   <view class="itemView">
 </view>
+</form>
 <view class="cu-bar bg-white solid-bottom">
   <view class="action">
     <text class="cuIcon-title text-blue"></text>处理记录
   </view>
 </view>
+
 <block  wx:for='{{12}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
 <view class="itemView">
     <view class="flex margin-left-sm align-center">
