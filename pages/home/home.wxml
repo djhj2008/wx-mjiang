@@ -1,0 +1,118 @@
+
+<cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
+<view slot="backText">返回</view>
+<view slot="content">牧江科技</view>
+</cu-custom>
+
+<view class="page bg-white">
+
+<view id="title1" class="home_title">总头数:{{devcount}}</view>
+<view id="title2" class="home_content" hidden="{{TabCur != 0}}">{{devlist1.length}}</view>
+<view id="title2" class="home_content" hidden="{{TabCur != 1}}">{{devlist2.length}}</view>
+<view id="title2" class="home_content" hidden="{{TabCur != 2}}">{{devlist3.length}}</view>
+<view id="title3" class="home_foot{{TabCur}}">
+{{subTitles[TabCur]}}
+</view>
+
+<view id="title4" class="flex margin-lr-lg margin-tb-sm">
+<view id="title5" class="divLine"></view>
+</view>
+
+<view id="title6" class="weui-tab">
+<scroll-view id="title7" scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{tabs[index]}}
+    </view>
+  </view>
+</scroll-view>
+
+<view class="weui-tab__content" hidden="{{TabCur != 0}}">
+  <scroll-view class="scrollView" style='height: {{scrollViewHeight + "px"}}' scroll-y="true">
+    <block  wx:for='{{devlist1}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+      <view class="itemView">
+          <view class="flex  margin-left-sm align-center justify-between">
+            <view class="flex-sub margin-top-xs margin-left-xs radius"><view class="list_sn">SN:{{item.sn}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
+          </view>
+          <view class="flex margin-left-sm align-center">
+            <view class="flex-sub  radius"><button class="cu-btn bg-orange lg">{{item.temp1}}</button></view>
+            <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
+          </view>
+          <view class="flex margin-lr-sm margin-tb-sm">
+          <view class="divLinesub"></view>
+          </view>
+          <view class="flex margin-left-sm justify-between align-center">
+            <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
+            <view class="margin-bottom radius margin-right-lg">
+            <button class="cu-btn bg-blue sm" bindtap="highsetting">
+            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </text>
+            </button>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class="weui-tab__content" hidden="{{TabCur != 1}}">  
+  <scroll-view class="scrollView" style='height: {{scrollViewHeight + "px"}}' scroll-y="true">
+    <block  wx:for='{{devlist2}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+      <view class="itemView">
+          <view class="flex  margin-left-sm align-center justify-between">
+            <view class="flex-sub margin-top-xs margin-left-xs radius"><view class="list_sn">SN:{{item.sn}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
+          </view>
+          <view class="flex margin-left-sm align-center">
+            <view class="flex-sub  radius"><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
+            <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
+          </view>
+          <view class="flex margin-lr-sm margin-tb-sm">
+          <view class="divLinesub"></view>
+          </view>
+          <view class="flex margin-left-sm justify-between align-center">
+            <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
+            <view class="margin-bottom radius margin-right-lg">
+            <button class="cu-btn bg-blue sm" bindtap="highsetting">
+            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </text>
+            </button>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class="weui-tab__content" hidden="{{TabCur != 2}}">
+  <scroll-view class="scrollView" style='height: {{scrollViewHeight + "px"}}' scroll-y="true">
+    <block  wx:for='{{devlist3}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+      <view class="itemView">
+          <view class="flex  margin-left-sm align-center justify-between">
+            <view class="flex-sub margin-top-xs margin-left-xs radius"><view class="list_sn">SN:{{item.sn}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
+          </view>
+          <view class="flex margin-left-sm align-center">
+            <view class="flex-sub  radius"><button class="cu-btn bg-grey lg">{{item.temp1}}</button></view>
+            <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
+          </view>
+          <view class="flex margin-lr-sm margin-tb-sm">
+          <view class="divLinesub"></view>
+          </view> 
+          <view class="flex margin-left-sm justify-between align-center">
+            <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
+            <view class="margin-bottom radius margin-right-lg">
+            <button class="cu-btn bg-blue sm" bindtap="highsetting">
+            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </text>
+            </button>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+</view> 
+</view>

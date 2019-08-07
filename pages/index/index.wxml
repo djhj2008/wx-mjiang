@@ -1,0 +1,56 @@
+<view class="page">
+    <view class="home_title">总头数:{{devcount}}</view>
+    <view class="home_content">23</view>
+    <view class="home_foot{{activeIndex}}">{{subTitles[activeIndex]}}</view>
+    <view class="home_bd">
+        <view class="weui-tab">
+
+<scroll-view scroll-x class="bg-gray nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{tabs[index]}}
+    </view>
+  </view>
+</scroll-view>
+            
+              <view class="page-tab__temp1">
+              (舍内)温度:{{envtemp1.temp1}}°C
+              湿度:{{envtemp1.temp2}}
+              </view>
+              <view class="page-tab__temp2">
+              (舍内)温度:{{envtemp2.temp1}}°C
+              湿度:{{envtemp2.temp2}}
+              </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+              <scroll-view class="scrollView" scroll-y="true" >
+              <block  wx:for='{{devlist1}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+                <view class="itemView">{{item.temp1}}</view>
+              </block>
+              </scroll-view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+              <scroll-view class="scrollView" scroll-y="true" >
+              <block  wx:for='{{devlist2}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+                <view class="itemView">{{item.temp1}}</view>
+              </block>
+              </scroll-view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+              <scroll-view class="scrollView" scroll-y="true" >
+              <block  wx:for='{{devlist3}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+                <view class="itemView">
+
+                <view class="rightView">
+                {{item.sn}}
+                </view>
+                <view class="rightView">
+                {{item.devid}}
+                </view>
+              
+                </view> 
+              </block>
+              </scroll-view>
+                </view>
+        </view>
+    </view>
+</view>

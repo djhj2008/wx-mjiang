@@ -1,0 +1,145 @@
+/* pages/home/home.wxss */
+
+.home_title{
+    font-size: 16px;
+    text-align: right;
+    height: 10%;
+}
+.home_content{
+    font-size: 66px;
+    text-align: center;
+    font-weight:bold;
+}
+.home_foot0{
+    font-size: 16px;
+    text-align: center;
+    color: orange;
+
+}
+.home_foot1{
+    font-size: 16px;
+    text-align: center;
+    color: green;
+}
+.home_foot2{
+    font-size: 16px;
+    text-align: center;
+    color: lightblue;
+}
+.scrollView{
+  display: flex;
+  flex: 1pt;
+}
+.itemView{
+  background-color: white;
+  border-bottom: 1pt solid #eee; 
+  border-top: 2pt solid #eee; 
+}
+.divLine{
+ background: gray;
+ width: 100%;
+ height: 1pt;
+}
+.divLinesub{
+ background: gray;
+ width: 100%;
+ height: 2rpx;
+}
+.list_sn{
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_id{
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_bat{
+    font-size: 14px;
+    text-align: right;
+    color: gray;
+}
+.list_days{
+    font-size: 15px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_time{
+    font-size: 14px;
+    text-align: left;
+    color: gray;
+}
+.batteryfull {
+   width: 40px;
+   height: 20px;
+   margin: auto;
+   background:
+  linear-gradient(to bottom,
+                  rgba(255,255,255,0.5) 0%, 
+                  rgba(255,255,255,0.4) 4%, 
+                  rgba(255,255,255,0.2) 7%, 
+                  rgba(255,255,255,0.2) 14%,   
+                  rgba(255,255,255,0.8) 14%, 
+                  rgba(255,255,255,0.2) 40%,
+                  rgba(255,255,255,0) 41%, 
+                  rgba(255,255,255,0) 80%, 
+                  rgba(255,255,255,0.2) 80%,    
+                  rgba(255,255,255,0.4) 86%, 
+                  rgba(255,255,255,0.6) 90%, 
+                  rgba(255,255,255,0.1) 92%, 
+                  rgba(255,255,255,0.1) 95%, 
+                  rgba(255,255,255,0.5) 98%),
+    linear-gradient(to right, 
+                  transparent 5%,
+                  #316d08 5%,
+                  #316d08 7%,
+                  #60b939 8%,
+                  #60b939 10%,
+                  #51aa31 11%,
+                  #51aa31 90%,
+                  #64ce11 90%, 
+                  #64ce11 90%, 
+                  #255405 90%, 
+                  black  80%,
+                  black  95%,
+                  transparent 95%);
+}
+.batterylow {
+   width: 40px;
+   height: 20px;
+   margin: auto;
+   background:
+  linear-gradient(to bottom,
+                  rgba(255,255,255,0.5) 0%, 
+                  rgba(255,255,255,0.4) 4%, 
+                  rgba(255,255,255,0.2) 7%, 
+                  rgba(255,255,255,0.2) 14%,   
+                  rgba(255,255,255,0.8) 14%, 
+                  rgba(255,255,255,0.2) 40%,
+                  rgba(255,255,255,0) 41%, 
+                  rgba(255,255,255,0) 80%, 
+                  rgba(255,255,255,0.2) 80%,    
+                  rgba(255,255,255,0.4) 86%, 
+                  rgba(255,255,255,0.6) 90%, 
+                  rgba(255,255,255,0.1) 92%, 
+                  rgba(255,255,255,0.1) 95%, 
+                  rgba(255,255,255,0.5) 98%),
+    linear-gradient(to right, 
+                  transparent 5%,
+                  #750900 5%,
+                  #750900 7%,
+                  #c6462b 8%,
+                  #c6462b 10%,
+                  #b74424 11%,
+                  #b74424 20%,
+                  #df0a00 22%, 
+                  #df0a00 22%, 
+                  #590700 22%, 
+                  black  25%,
+                  black  95%,
+                  transparent 95%);
+  }

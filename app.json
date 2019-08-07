@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/setting/setting",
+    "pages/health/health",
+    "pages/user/user",
+    "pages/home/high/index",
+    "pages/home/cure/index",
+    "pages/home/low/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+
+  "tabBar": {
+    "color": "#ccc",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/tabbar/basics.png",
+        "selectedIconPath": "/images/tabbar/basics_cur.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设备管理",
+        "iconPath": "/images/tabbar/plugin.png",
+        "selectedIconPath": "/images/tabbar/plugin_cur.png"
+      },
+      {
+        "pagePath": "pages/health/health",
+        "text": "温度",
+        "iconPath": "/images/tabbar/component.png",
+        "selectedIconPath": "/images/tabbar/component_cur.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人",
+        "iconPath": "/images/tabbar/about.png",
+        "selectedIconPath": "/images/tabbar/about_cur.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

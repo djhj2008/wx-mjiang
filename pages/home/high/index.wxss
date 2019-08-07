@@ -1,0 +1,5 @@
+/* pages/home/high/index.wxss */
+ radio-group{
+  display: flex;
+  align-items: center;
+}

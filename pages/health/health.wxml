@@ -1,0 +1,10 @@
+<!--pages/index/index.wxml-->
+<cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
+<view slot="backText">返回</view>
+<view slot="content">牧江科技</view>
+</cu-custom>
+<view class="page bg-white">
+<view class="container">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+</view>
