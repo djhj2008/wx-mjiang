@@ -7,6 +7,7 @@
       </view>
     </view>
   </view>
+
 <form bindsubmit="bindFormSubmit">
   <radio-group class="radio-group flex solid-bottom padding justify-around" name="flag">
     <view class="flex-sub  margin-left-lg">
@@ -19,7 +20,7 @@
 
 <view class="cu-bar bg-white solid-bottom">
   <view class="action">
-    <text class="cuIcon-title text-blue"></text>病情描述
+    <text class="cuIcon-title text-blue"></text>病情描述(设备ID:{{devid}},温度:{{temp1}})
   </view>
 </view>
 	<view class="cu-form-group solid-bottom">
@@ -38,14 +39,18 @@
   </view>
 </view>
 
-<block  wx:for='{{12}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+<block  wx:for='{{desclist}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
 <view class="itemView">
-    <view class="flex margin-left-sm align-center">
-      <view class="flex-sub  radius"><button class="cu-btn bg-orange lg">39.71</button></view>
-      <view class="flex-twice  radius"><view class="list_days">病情描述</view></view>
+    <view class="flex margin-left-sm margin-top-sm justify-between align-center">
+      <view class="flex-sub  radius" wx:if="{{item.state==1}}" ><button class="cu-btn bg-orange lg">{{item.temp1}}</button></view>
+      <view class="flex-sub  radius" wx:if="{{item.state==2}}" ><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
+      <view class="flex-twice  radius"><view class="list_days">{{item.msg}}</view></view>
     </view>
     <view class="flex margin-lr-sm margin-tb-sm">
-    <view class="divLinesub"></view>
+      <view class="divLinesub"></view>
+    </view>
+    <view class="flex margin-left-sm justify-between align-center">
+      <view class="margin-bottom radius "><view class="list_time">{{item.time}}</view></view>
     </view>
 </view>
 </block>

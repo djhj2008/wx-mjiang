@@ -90,13 +90,28 @@ Page({
   },
 
   highsetting: function(e){
-    var data = e.currentTarget.dataset;
-    console.log(data);
+    var dev = e.currentTarget.dataset.dev;
+    console.log(dev);
     wx.navigateTo({
-      url: '/pages/home/high/index?' + 'devid=' + data.devid,
+      url: '/pages/home/high/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid + '&temp1=' + dev.temp1,
     })
   },
 
+  curesetting: function (e) {
+    var dev = e.currentTarget.dataset.dev;
+    console.log(dev);
+    wx.navigateTo({
+      url: '/pages/home/cure/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid + '&temp1=' + dev.temp1,
+    })
+  },
+
+  lowsetting: function (e) {
+    var dev = e.currentTarget.dataset.dev;
+    console.log(dev);
+    wx.navigateTo({
+      url: '/pages/home/low/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid + '&temp1=' + dev.temp1,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

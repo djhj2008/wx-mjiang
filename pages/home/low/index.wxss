@@ -1,5 +1,15 @@
-/* pages/home/low/index.wxss */
+/* pages/home/high/index.wxss */
  radio-group{
   display: flex;
   align-items: center;
+}
+.divLine{
+ background: gray;
+ width: 100%;
+ height: 1pt;
+}
+.divLinesub{
+ background: gray;
+ width: 100%;
+ height: 2rpx;
 }
