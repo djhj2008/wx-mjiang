@@ -64,7 +64,7 @@ Component({
           this.chart = this.data.ec.onInit(canvas, res.width, res.height, num, days);
         }
         else {
-          console.log('test1');
+          console.log('init');
           this.triggerEvent('init', {
             canvas: canvas,
             width: res.width,

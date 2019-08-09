@@ -7,7 +7,8 @@
     "pages/user/user",
     "pages/home/high/index",
     "pages/home/cure/index",
-    "pages/home/low/index"
+    "pages/home/low/index",
+    "pages/home/todayvalue/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,11 +17,10 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
-
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom",
+    "ec-canvas": "/ec-canvas/ec-canvas"
   },
-
   "tabBar": {
     "color": "#ccc",
     "list": [

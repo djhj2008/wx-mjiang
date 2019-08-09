@@ -112,6 +112,15 @@ Page({
       url: '/pages/home/low/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid + '&temp1=' + dev.temp1,
     })
   },
+
+  todayvalue: function (e) {
+    var dev = e.currentTarget.dataset.dev;
+    console.log(dev);
+    wx.navigateTo({
+      url: '/pages/home/todayvalue/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

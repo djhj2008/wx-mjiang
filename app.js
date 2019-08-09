@@ -57,5 +57,6 @@ App({
     highset_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/setting',
     cureset_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/setting2',
     lowset_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/setting3',
+    todayvalue_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/todayValue',
   }
 })

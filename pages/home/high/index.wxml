@@ -42,6 +42,7 @@
 <block  wx:for='{{desclist}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
 <view class="itemView">
     <view class="flex margin-left-sm margin-top-sm justify-between align-center">
+      <view class="flex-sub  radius" wx:if="{{item.state==0}}" ><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
       <view class="flex-sub  radius" wx:if="{{item.state==1}}" ><button class="cu-btn bg-orange lg">{{item.temp1}}</button></view>
       <view class="flex-sub  radius" wx:if="{{item.state==2}}" ><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
       <view class="flex-twice  radius"><view class="list_days">{{item.msg}}</view></view>

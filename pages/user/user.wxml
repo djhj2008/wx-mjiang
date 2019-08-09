@@ -1,2 +1,4 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
+<view slot="backText">返回</view>
+<view slot="content">牧江科技</view>
+</cu-custom>
