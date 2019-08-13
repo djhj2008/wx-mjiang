@@ -51,9 +51,8 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm" bindtap="highsetting" data-dev='{{item}}'>
-            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </text>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="highsetting" data-dev='{{item}}'>
+            处理
             </button>
             </view>
           </view>
@@ -83,9 +82,8 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm" bindtap="curesetting" data-dev='{{item}}'>
-            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </text>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="highsetting" data-dev='{{item}}'>
+            处理
             </button>
             </view>
           </view>
@@ -115,9 +113,8 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm" bindtap="lowsetting" data-dev='{{item}}'>
-            <text class="user-motto" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </text>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="highsetting" data-dev='{{item}}'>
+            处理
             </button>
             </view>
           </view>

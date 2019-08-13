@@ -1,4 +1,34 @@
 <cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
 <view slot="backText">返回</view>
 <view slot="content">牧江科技</view>
-</cu-custom>
+</cu-custom> 
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-bar bg-white">
+    <view class="action title-style-3">
+      <text class="text-xl text-bold">个人中心</text>
+      <text class="text-Abc text-gray self-end margin-left-sm">Center</text>
+    </view>
+  </view>
+
+  <view class="cu-list menu margin-top-xs margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/about/about" hover-class="none">
+         <text class="cuIcon-profile text-green"></text>
+        <text class="text-grey">关于我们</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+        <text class="cuIcon-settings text-green"></text>
+        <text class="text-grey">设置</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-lock text-cyan"></text>
+        <text class="text-grey">修改密码</text>
+      </button>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

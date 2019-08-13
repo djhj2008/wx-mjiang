@@ -1,4 +1,4 @@
-// pages/setting/setting.js
+// pages/setting/devadd/index.js
 Page({
 
   /**
@@ -62,17 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  additem: function(){
-    wx.navigateTo({
-      url: '/pages/setting/devadd/index',
-    })
-  },
-
-  edititem: function () {
-    wx.navigateTo({
-      url: '/pages/setting/devedit/index',
-    })
   }
 })

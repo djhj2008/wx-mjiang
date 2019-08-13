@@ -1,1 +1,63 @@
 /* pages/setting/setting.wxss */
+.box {  
+  margin: 20rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+}
+.scrollView{
+  display: flex;
+  flex: 1pt;
+}
+.itemView{
+  background-color: white;
+  border-bottom: 1pt solid #eee; 
+  border-top: 2pt solid #eee; 
+}
+.divLine{
+ background: gray;
+ width: 100%;
+ height: 1pt;
+}
+.divLinesub{
+ background: gray;
+ width: 100%;
+ height: 2rpx;
+}
+.list_sn{
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_id{
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_bat{
+    font-size: 14px;
+    text-align: right;
+    color: gray;
+}
+.list_days{
+    font-size: 15px;
+    text-align: left;
+    color: black;
+    font-weight:bold;
+}
+.list_time{
+    font-size: 14px;
+    text-align: left;
+    color: gray;
+}
+.list_state{
+    font-size: 14px;
+    text-align: left;
+    color: blue;
+}
+.edit_item{
+ width: 200rpx;
+}

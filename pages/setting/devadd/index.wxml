@@ -1,0 +1,29 @@
+<cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">牧江科技</view>
+</cu-custom>  
+  
+  <view class="cu-bar bg-white">
+    <view class="action title-style-3">
+      <text class="text-xl text-bold">添加设备</text>
+      <text class="text-Abc text-gray self-end margin-left-sm">Add</text>
+    </view>
+  </view>
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">区域</view>
+		<input placeholder="" value="牧江科技"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">设备ID</view>
+		<input placeholder="请输入设备ID"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">SN编码</view>
+		<input placeholder="空"></input>
+	</view>
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue" bindtap="highsetting">提交
+  </button>
+  </view>
+</form>

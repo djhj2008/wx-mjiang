@@ -73,6 +73,9 @@
     text-align: left;
     color: gray;
 }
+.edit_item{
+ width: 200rpx;
+}
 .batteryfull {
    width: 40px;
    height: 20px;
