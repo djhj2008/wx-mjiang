@@ -6,12 +6,36 @@ var todayvalue_URL = getApp().globalData.todayvalue_URL;
 
 const app = getApp();
 
+
+function min(a, b) {
+  return a < b ? a : b;
+}
+
+function getmin(arr) {
+  var minValue = arr[0];
+
+  for (var i = 1; i < arr.length; i++) {
+    minValue = min(minValue, arr[i]);
+  }
+  return minValue;
+}
+
+
+
 function initChart(canvas, width, height, num, days) {
   const chart = echarts.init(canvas, "macarons", {
     width: width,
     height: height
   });
   canvas.setChart(chart);
+  
+  var minvalue = getmin(num);
+  if(minvalue<36){
+    minvalue=0;
+  }else{
+    minvalue=36;
+  }
+
 
   var option = {
     tooltip: {
@@ -61,7 +85,7 @@ function initChart(canvas, width, height, num, days) {
       axisLabel: {
         formatter: '{value}°C'
       },
-      min: 36,
+      min: minvalue,
       max: 42,
     },
     series: [
@@ -96,6 +120,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hide: true,
     devid: 0,
     psnid: 0,
   },
@@ -171,7 +196,14 @@ Page({
             onInit: initChart
           }
         });
-        that.selectComponent("#mychart-dom-line").init();
+        if (res.data.Dev.ret.temp1Arr.length>0){
+          that.selectComponent("#mychart-dom-line").init();
+        }else{
+          that.setData({
+            hide:false
+          });
+        }
+        
       },
       fail: function (res) {
       }

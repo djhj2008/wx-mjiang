@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var devid = options.devid;
+    console.log("devedit:onLoad");
+    console.log(devid);
   },
 
   /**

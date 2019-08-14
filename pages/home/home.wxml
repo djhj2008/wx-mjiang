@@ -73,7 +73,9 @@
             <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
           </view>
           <view class="flex margin-left-sm align-center">
-            <view class="flex-sub  radius"><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
+            <view class="flex-sub  radius">
+            <button class="cu-btn bg-green lg"  bindtap="todayvalue" data-dev='{{item}}'>{{item.temp1}}</button>
+            </view>
             <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
           </view>
           <view class="flex margin-lr-sm margin-tb-sm">
@@ -104,7 +106,9 @@
             <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
           </view>
           <view class="flex margin-left-sm align-center">
-            <view class="flex-sub  radius"><button class="cu-btn bg-grey lg">{{item.temp1}}</button></view>
+            <view class="flex-sub  radius">
+            <button class="cu-btn bg-grey lg" bindtap="todayvalue" data-dev='{{item}}'>{{item.temp1}}</button>
+            </view>
             <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
           </view>
           <view class="flex margin-lr-sm margin-tb-sm">
