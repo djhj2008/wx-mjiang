@@ -43,7 +43,7 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.time}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm edit_item" bindtap="edititem" data-devid='{{item.devid}}'>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="edititem" data-dev='{{item}}'>
             <text class="edit_item">编辑
             </text>
             </button>

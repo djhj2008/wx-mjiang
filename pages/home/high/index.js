@@ -27,6 +27,7 @@ Page({
       psnid: psnid,
       temp1: temp1
     });
+    console.log("onLoad");
     console.log(options);
   },
 

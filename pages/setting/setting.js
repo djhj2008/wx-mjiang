@@ -131,9 +131,9 @@ Page({
   },
 
   edititem: function (e) {
-    var devid = e.currentTarget.dataset.devid;
+    var dev = e.currentTarget.dataset.dev;
     wx.navigateTo({
-      url: '/pages/setting/devedit/index?' + 'devid=' + devid
+      url: '/pages/setting/devedit/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psn
     })
   },
 

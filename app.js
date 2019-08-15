@@ -58,6 +58,8 @@ App({
     cureset_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/setting2',
     lowset_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/setting3',
     todayvalue_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/todayValue',
-    devlist_URL:'https://iot.xunrun.com.cn/pg/index.php/add/devlistwx'
+    devlist_URL:'https://iot.xunrun.com.cn/pg/index.php/add/devlistwx',
+    devedit_URL: 'https://iot.xunrun.com.cn/pg/index.php/add/deveditwx',
+    devadd_URL: 'https://iot.xunrun.com.cn/pg/index.php/add/devaddwx',
   }
 })
