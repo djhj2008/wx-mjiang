@@ -1,6 +1,6 @@
 <cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{true}}">
 <view slot="backText">返回</view>
-<view slot="content">牧江科技</view>
+<view slot="content">{{psninfo}}</view>
 </cu-custom>  
   
   <view class="cu-bar bg-white">
@@ -12,15 +12,15 @@
 <form bindsubmit="bindFormSubmit">
 	<view class="cu-form-group margin-top">
 		<view class="title">区域</view>
-		<input placeholder="" value="{{dev.psninfo}}"></input>
+		<input disabled='disabled'  value="{{dev.psninfo}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">设备ID</view>
-		<input name="devid" placeholder="" value="{{dev.devid}}"></input>
+		<input disabled='disabled'  value="{{dev.devid}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">SN编码</view>
-		<input name="sn" placeholder="" value="{{dev.sn}}"></input>
+		<input name="sn" placeholder="空" value="{{dev.sn}}"></input>
 	</view>
   <view class="cu-form-group">
 		<view class="title">状态</view>

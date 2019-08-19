@@ -1,7 +1,7 @@
 
 <cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
 <view slot="backText">返回</view>
-<view slot="content">牧江科技</view>
+<view slot="content">{{psninfo}}</view>
 </cu-custom>
 
 <view class="page bg-white">

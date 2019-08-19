@@ -15,6 +15,7 @@ Page({
     username:null,
     searchflag:false,
     devid:null,
+    psninfo:null,
   },
 
   /**
@@ -22,6 +23,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    this.setData({
+      psninfo: getApp().globalData.psninfo,
+    });
     wx.getStorage({
       key: 'enduser',
       success: function (res) {
@@ -82,6 +86,7 @@ Page({
         wx.stopPullDownRefresh(); //停止下拉刷新
         that.setData({
           devlist: res.data.Dev.ret.devlist,
+          psnid: res.data.Dev.ret.psnid,
         })
       },
       fail: function (res) {
@@ -124,9 +129,10 @@ Page({
 
   },
 
-  additem: function(){
+  additem: function(e){
+    var psnid = e.currentTarget.dataset.psnid;
     wx.navigateTo({
-      url: '/pages/setting/devadd/index',
+      url: '/pages/setting/devadd/index?' + 'psnid=' + psnid,
     })
   },
 

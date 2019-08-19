@@ -51,6 +51,7 @@ App({
     userInfo: null,
     screenHeight: null,
     screenWidth: null,
+    psninfo: null,
     aip: 'ios',
     login_URL: 'https://iot.xunrun.com.cn/pg/index.php/manager/login',
     home_URL: 'https://iot.xunrun.com.cn/pg/index.php/devselect/sickness',

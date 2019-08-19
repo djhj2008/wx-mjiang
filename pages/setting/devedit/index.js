@@ -22,7 +22,9 @@ Page({
     var that = this;
     var devid = options.devid;
     var psnid = options.psnid;
-
+    this.setData({
+      psninfo: getApp().globalData.psninfo
+    });
     console.log("devedit:onLoad");
     console.log(devid);
     var data = { devid: devid, aip: aip, psnid: psnid};
@@ -60,7 +62,6 @@ Page({
 
   bindFormSubmit: function (e) {
     var that = this;
-    var flag = e.detail.value.flag;
     var sn = e.detail.value.sn;
     var devid = that.data.dev.devid;
     var psnid = that.data.dev.psn;
@@ -69,7 +70,7 @@ Page({
     console.log(sn);
     console.log(devid);
     console.log(psnid);
-    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn,flag:flag};
+    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn};
     console.log(devedit_URL, data)
     //that.requestData(devedit_URL, data);
     var options = { devid: devid,psnid: psnid};

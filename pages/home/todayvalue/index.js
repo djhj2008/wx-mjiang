@@ -150,6 +150,9 @@ Page({
         onInit: null
       }
     });
+    this.setData({
+      psninfo: getApp().globalData.psninfo
+    });
   },
 
   /**

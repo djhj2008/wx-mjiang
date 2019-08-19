@@ -1,9 +1,50 @@
 <cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
 <view slot="backText">返回</view>
-<view slot="content">牧江科技</view>
+<view slot="content">{{psninfo}}</view>
 </cu-custom>
 <view class="page bg-white">
-<view class="container">
-  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+
+<form bindsubmit="bindFormSubmit">
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" name="devid" placeholder="设备SN/ID" confirm-type="search" wx:if="{{devid!=null}}" value="{{devid}}"></input>
+    <input type="text" name="devid" placeholder="设备SN/ID" confirm-type="search" wx:if="{{devid==null}}"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-blue shadow-blur round"  form-type="submit">搜索</button>
+  </view>
+</view>
+</form>
+
+<view class="divLine"></view>
+<view class="cu-list menu sm-bordercard-menu">
+  <scroll-view class="scrollView" style='height: {{scrollViewHeight + "px"}}' scroll-y="true">
+    <block  wx:for='{{devlist}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+      <view class="itemView">
+          <view class="flex  margin-left-sm align-center justify-between">
+            <view class="flex-sub margin-top-xs margin-left-xs radius">
+              <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
+              <view class="list_sn" wx:if="{{item.sn!=null}}">SN:{{item.sn}}</view>
+            </view>
+            <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
+            <view class="flex-sub margin-top-xs radius">
+            <view class="list_state" wx:if="{{item.flag==0}}">未激活</view>
+            <view class="list_state" wx:if="{{item.flag==1}}">已激活</view>
+            </view>
+          </view>
+
+          <view class="flex margin-left-sm justify-between align-center">
+            <view class="margin-bottom radius "><view class="list_time">{{item.time}}</view></view>
+            <view class="margin-bottom radius margin-right-lg">
+            <button class="cu-btn bg-blue sm edit_item" bindtap="todayvalue" data-dev='{{item}}'>
+            <text class="edit_item">体温
+            </text>
+            </button>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
 </view>
 </view>

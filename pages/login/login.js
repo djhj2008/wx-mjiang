@@ -3,6 +3,7 @@ var screenHeight = getApp().globalData.screenHeight;
 var width = getApp().globalData.screenWidth - 40;
 var login_URL = getApp().globalData.login_URL;
 var aip = getApp().globalData.aip;
+var app = getApp();
 
 // pages/login/login.js
 Page({
@@ -113,7 +114,9 @@ Page({
             icon: 'success',
             duration: 2000
           });
-
+          getApp().globalData.psninfo = res.data.UserInfo.ret.data.info;
+          console.log("psninfo:");
+          console.log(getApp().globalData.psninfo);
           try {
             wx.setStorageSync('logininfo', data);
             wx.setStorageSync('enduser', res.data.UserInfo.ret.data);

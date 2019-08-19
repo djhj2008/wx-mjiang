@@ -27,6 +27,9 @@ Page({
       psnid: psnid,
       temp1: temp1
     });
+    this.setData({
+      psninfo: getApp().globalData.psninfo
+    });
     console.log(options);
   },
 

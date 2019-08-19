@@ -1,6 +1,6 @@
 <cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{false}}">
 <view slot="backText">返回</view>
-<view slot="content">牧江科技</view>
+<view slot="content">{{psninfo}}</view>
 </cu-custom>
 <view class="page bg-white">
 
@@ -19,7 +19,7 @@
 
 <view class="divLine"></view>
 <view class="cu-list menu sm-bordercard-menu">
-<view class="cu-item arrow" bindtap="additem">
+<view class="cu-item arrow" bindtap="additem" data-psnid='{{psnid}}'>
   <view class="content">
     <text class="cuIcon-add text-grey"></text>
     <text class="text-grey">添加设备</text>

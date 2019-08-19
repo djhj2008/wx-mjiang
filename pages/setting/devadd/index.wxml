@@ -12,7 +12,7 @@
 <form>
 	<view class="cu-form-group margin-top">
 		<view class="title">区域</view>
-		<input placeholder="" value="牧江科技"></input>
+		<input disabled='disabled' value="{{psn.info}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">设备ID</view>

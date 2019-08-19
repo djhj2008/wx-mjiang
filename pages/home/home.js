@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    psninfo:null,
     // 页面总高度将会放在这里
     windowHeight: 0,
     // navbar的高度
@@ -58,7 +59,10 @@ Page({
         console.log("windowHeight:" + res.windowHeight);
       }
     });
-
+    // 算出来之后存到data对象里面
+    this.setData({
+      psninfo: getApp().globalData.psninfo
+    });
     // 然后取出navbar和header的高度
     // 根据文档，先创建一个SelectorQuery对象实例
     let query = wx.createSelectorQuery().in(this);
