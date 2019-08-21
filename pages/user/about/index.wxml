@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于牧江科技</view>
+  <view class='text-content'>
+    <view>Hi！尊敬的用户,欢迎使用牧江科技产品.</view>
+    <view class='margin-top-sm'>北京牧江科技有限公司是由清华大学人工智能专家，通讯开发专家，畜牧专家强强结合的核心团队，是一家以技术为核心驱动专注于智慧畜牧的AIOT(人工智能+物联网）高科技企业. </view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

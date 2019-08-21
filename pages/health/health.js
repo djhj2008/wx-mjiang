@@ -25,6 +25,20 @@ Page({
     this.setData({
       psninfo: getApp().globalData.psninfo,
     });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var that = this;
     wx.getStorage({
       key: 'enduser',
       success: function (res) {
@@ -47,21 +61,6 @@ Page({
         wx.clearStorage()
       },
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    var that = this;
-
   },
 
   requestData: function (url, data) {
@@ -146,12 +145,12 @@ Page({
         searchflag: true,
         devid: devid,
       })
-      this.onLoad();
+      this.onShow();
     } else {
       that.setData({
         searchflag: false,
       })
-      this.onLoad();
+      this.onShow();
     }
   },
 })

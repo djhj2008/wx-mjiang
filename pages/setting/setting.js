@@ -26,28 +26,6 @@ Page({
     this.setData({
       psninfo: getApp().globalData.psninfo,
     });
-    wx.getStorage({
-      key: 'enduser',
-      success: function (res) {
-        console.log(res.data);
-        that.setData({
-          userid: res.data.autoid,
-          username:res.data.name,
-        });
-        if (that.data.searchflag) {
-          var data = { userid: that.data.userid, aip: aip ,devid:that.data.devid};
-          console.log(devlist_URL, data)
-          that.requestData(devlist_URL, data);
-        }else{
-          var data = { userid: that.data.userid, aip: aip };
-          console.log(devlist_URL, data)
-          that.requestData(devlist_URL, data);
-        }
-      },
-      fail: function (res) {
-        wx.clearStorage()
-      },
-    })
   },
 
   /**
@@ -62,13 +40,33 @@ Page({
    */
   onShow: function () {
     var that = this;
-
+    wx.getStorage({
+      key: 'enduser',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          userid: res.data.autoid,
+          username: res.data.name,
+        });
+        var data;
+        if (that.data.searchflag) {
+          data = { userid: that.data.userid, aip: aip, devid: that.data.devid };
+        } else {
+          data = { userid: that.data.userid, aip: aip };
+        }
+        console.log(devlist_URL, data)
+        that.requestData(devlist_URL, data);
+      },
+      fail: function (res) {
+        wx.clearStorage()
+      },
+    })
   },
 
   requestData: function (url, data) {
     var that = this;
     wx.showLoading({
-      title: '登录中...',
+      title: '查询中...',
       icon: "loading",
       duration: 10000
     })
@@ -153,12 +151,12 @@ Page({
         searchflag: true,
         devid: devid,
       })
-      this.onLoad();
+      this.onShow();
     }else{
       that.setData({
         searchflag: false,
       })
-      this.onLoad();
+      this.onShow();
     }
 
     /*

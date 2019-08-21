@@ -12,23 +12,23 @@
 
   <view class="cu-list menu margin-top-xs margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
-      <navigator class="content" url="/pages/about/about/about" hover-class="none">
+      <navigator class="content" url="/pages/user/about/index" hover-class="none">
          <text class="cuIcon-profile text-green"></text>
         <text class="text-grey">关于我们</text>
       </navigator>
     </view>
     <view class="cu-item arrow">
-      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <navigator class="content" url="/pages/login/login" hover-class="none">
         <text class="cuIcon-settings text-green"></text>
-        <text class="text-grey">设置</text>
+        <text class="text-grey">退出登录</text>
       </navigator>
     </view>
-    <view class="cu-item arrow">
-      <button class="cu-btn content" open-type="feedback">
+    <!--view class="cu-item arrow">
+      <navigator class="content" url="/pages/user/password/index" hover-class="none">
         <text class="cuIcon-lock text-cyan"></text>
         <text class="text-grey">修改密码</text>
-      </button>
-    </view>
+      </navigator>
+    </view-->
   </view>
   <view class="cu-tabbar-height"></view>
 </scroll-view>

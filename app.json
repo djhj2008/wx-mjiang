@@ -9,7 +9,10 @@
     "pages/home/cure/index",
     "pages/home/low/index",
     "pages/home/todayvalue/index",
-    "pages/setting/devedit/index"
+    "pages/setting/devedit/index",
+    "pages/user/about/index",
+    "pages/user/password/index",
+    "pages/user/pushmsg/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

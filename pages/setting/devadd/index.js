@@ -82,10 +82,10 @@ Page({
     console.log(psnid);
     var data = { devid: devid, aip: aip, psnid: psnid, sn: sn};
     console.log(devedit_URL, data)
-    //that.requestData2(devedit_URL, data);
+    that.requestData2(devedit_URL, data);
     var options = { devid: devid, psnid: psnid };
     that.onLoad(options);
-  },
+  }, 
   
   requestData2: function (url, data) {
     var that = this;
@@ -109,8 +109,18 @@ Page({
         that.setData({
           dev: res.data.Dev.ret,
         })
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        });
       },
       fail: function (res) {
+        wx.showToast({
+          title: '失败',
+          icon: 'fail',
+          duration: 2000
+        });
       }
     })
   },

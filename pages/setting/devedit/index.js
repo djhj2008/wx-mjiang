@@ -23,19 +23,18 @@ Page({
     var devid = options.devid;
     var psnid = options.psnid;
     this.setData({
-      psninfo: getApp().globalData.psninfo
+      psninfo: getApp().globalData.psninfo,
+      devid:  devid,
+      psnid:  psnid
     });
     console.log("devedit:onLoad");
     console.log(devid);
-    var data = { devid: devid, aip: aip, psnid: psnid};
-    console.log(devedit_URL, data)
-    that.requestData(devedit_URL, data);
   },
 
   requestData: function (url, data) {
     var that = this;
     wx.showLoading({
-      title: '登录中...',
+      title: '查询中...',
       icon: "loading",
       duration: 10000
     })
@@ -53,28 +52,90 @@ Page({
         wx.stopPullDownRefresh(); //停止下拉刷新
         that.setData({
           dev: res.data.Dev.ret.dev,
+          flag: res.data.Dev.ret.dev.flag
         })
       },
       fail: function (res) {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading(); //完成停止加载
+        wx.stopPullDownRefresh(); //停止下拉刷新
       }
     })
   },
 
+  flagChange: function (e) {
+    var that = this;
+    var flag = e.detail.value;
+    if (flag){
+      that.setData({
+        flag: 1,
+      })
+    }else{
+      that.setData({
+        flag: 0,
+      })
+    }
+
+    console.log(that.data.flag);
+  },
+  
   bindFormSubmit: function (e) {
     var that = this;
     var sn = e.detail.value.sn;
     var devid = that.data.dev.devid;
     var psnid = that.data.dev.psn;
+    var flag = that.data.flag;
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(sn);
     console.log(devid);
     console.log(psnid);
-    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn};
+
+    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn,flag:flag};
     console.log(devedit_URL, data)
-    //that.requestData(devedit_URL, data);
-    var options = { devid: devid,psnid: psnid};
-    that.onLoad(options);
+    that.requestData2(devedit_URL, data);
+  },
+
+  requestData2: function (url, data) {
+    var that = this;
+    wx.showLoading({
+      title: '查询中...',
+      icon: "loading",
+      duration: 10000
+    })
+    wx.request({
+      url: url,
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: data,
+      success: function (res) {
+        console.log(res.data.Dev);
+        wx.hideLoading();
+        wx.hideNavigationBarLoading(); //完成停止加载
+        wx.stopPullDownRefresh(); //停止下拉刷新
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        });
+        var options = { devid: that.data.dev.devid, psnid: that.data.dev.psn };
+        that.onLoad(options);
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading(); //完成停止加载
+        wx.stopPullDownRefresh(); //停止下拉刷新
+        wx.showToast({
+          title: '失败',
+          icon: 'fail',
+          duration: 2000
+        });
+        var options = { devid: that.data.dev.devid, psnid: that.data.dev.psn };
+        that.onLoad(options);
+      }
+    })
   },
 
   /**
@@ -88,7 +149,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var data = { devid: that.data.devid, aip: aip, psnid: that.data.psnid };
+    console.log(devedit_URL, data)
+    that.requestData(devedit_URL, data);
   },
 
   /**
