@@ -33,8 +33,9 @@
       <view class="itemView">
           <view class="flex  margin-left-sm align-center justify-between">
             <view class="flex-sub margin-top-xs margin-left-xs radius">
-              <view class="list_sn" hidden="{{item.sn == null}}">SN:{{item.sn}}</view>
-              <view class="list_sn" hidden="{{item.sn != null}}">SN:空</view>
+              <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
+              <view class="list_sn" wx:elif="{{item.sn==''}}">SN:空</view>
+              <view class="list_sn" wx:else="{{item.sn==''}}">SN:{{item.sn}}</view>
             </view>
             <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
             <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
@@ -66,8 +67,9 @@
       <view class="itemView">
           <view class="flex  margin-left-sm align-center justify-between">
             <view class="flex-sub margin-top-xs margin-left-xs radius">
-              <view class="list_sn" hidden="{{item.sn == null}}">SN:{{item.sn}}</view>
-              <view class="list_sn" hidden="{{item.sn != null}}">SN:空</view>
+              <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
+              <view class="list_sn" wx:elif="{{item.sn==''}}">SN:空</view>
+              <view class="list_sn" wx:else="{{item.sn==''}}">SN:{{item.sn}}</view>
             </view>
             <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
             <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
@@ -84,7 +86,7 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm edit_item" bindtap="highsetting" data-dev='{{item}}'>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="curesetting" data-dev='{{item}}'>
             处理
             </button>
             </view>
@@ -99,8 +101,9 @@
       <view class="itemView">
           <view class="flex  margin-left-sm align-center justify-between">
             <view class="flex-sub margin-top-xs margin-left-xs radius">
-              <view class="list_sn" hidden="{{item.sn == null}}">SN:{{item.sn}}</view>
-              <view class="list_sn" hidden="{{item.sn != null}}">SN:空</view>
+              <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
+              <view class="list_sn" wx:elif="{{item.sn==''}}">SN:空</view>
+              <view class="list_sn" wx:else="{{item.sn==''}}">SN:{{item.sn}}</view>
             </view>
             <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
             <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
@@ -117,7 +120,7 @@
           <view class="flex margin-left-sm justify-between align-center">
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
-            <button class="cu-btn bg-blue sm edit_item" bindtap="highsetting" data-dev='{{item}}'>
+            <button class="cu-btn bg-blue sm edit_item" bindtap="lowsetting" data-dev='{{item}}'>
             处理
             </button>
             </view>

@@ -9,21 +9,21 @@
       <text class="text-Abc text-gray self-end margin-left-sm">Add</text>
     </view>
   </view>
-<form>
+<form bindsubmit="bindFormSubmit">
 	<view class="cu-form-group margin-top">
 		<view class="title">区域</view>
 		<input disabled='disabled' value="{{psn.info}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">设备ID</view>
-		<input placeholder="请输入设备ID"></input>
+		<input placeholder="请输入设备ID" name="devid" ></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">SN编码</view>
-		<input placeholder="空"></input>
+		<input placeholder="空" name="sn" ></input>
 	</view>
   <view class="padding flex flex-direction">
-  <button class="cu-btn bg-blue" bindtap="highsetting">提交
+  <button class="cu-btn bg-blue" form-type="submit">提交
   </button>
   </view>
 </form>

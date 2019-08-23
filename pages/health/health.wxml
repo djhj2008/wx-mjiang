@@ -25,7 +25,8 @@
           <view class="flex  margin-left-sm align-center justify-between">
             <view class="flex-sub margin-top-xs margin-left-xs radius">
               <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
-              <view class="list_sn" wx:if="{{item.sn!=null}}">SN:{{item.sn}}</view>
+              <view class="list_sn" wx:elif="{{item.sn==''}}">SN:空</view>
+              <view class="list_sn" wx:else="{{item.sn==''}}">SN:{{item.sn}}</view>
             </view>
             <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
             <view class="flex-sub margin-top-xs radius">

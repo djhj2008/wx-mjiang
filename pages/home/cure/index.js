@@ -37,12 +37,61 @@ Page({
     var that = this;
     var flag = e.detail.value.flag;
     var desc = e.detail.value.textarea;
-    var tem1 = that.data.temp1;
+    var temp1 = that.data.temp1;
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(desc);
-  },
+    var data = {
+      psnid: that.data.psnid,
+      devid: that.data.devid,
+      aip: aip,
+      msg:desc,
+      temp1:temp1
 
+    };
+    console.log(cureset_URL, data)
+    that.requestData2(cureset_URL, data);
+  },
+  
+  requestData2: function (url, data) {
+    var that = this
+    wx.showLoading({
+      title: '载入中...',
+      icon: "loading",
+      duration: 10000
+    })
+    wx.request({
+      url: url,
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: data,
+      success: function (res) {
+        console.log(res.data.Dev.ret);
+        wx.hideLoading();
+        wx.hideNavigationBarLoading(); //完成停止加载
+        wx.stopPullDownRefresh(); //停止下拉刷新
+        var ret_message = res.data.Dev.ret.ret_message
+        if (ret_message == "success") {
+          wx.showToast({
+            title: '成功.',
+            icon: 'success',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '失败,设备已存在.',
+            icon: 'fail',
+            duration: 2000
+          });
+        }
+        that.onShow();
+      },
+      fail: function (res) {
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

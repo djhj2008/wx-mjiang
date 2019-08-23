@@ -43,7 +43,7 @@ Page({
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      method: "POST",
+      method: "POST", 
       data: data,
       success: function (res) {
         console.log(res.data.Dev);
