@@ -38,6 +38,14 @@ Page({
     var flag = e.detail.value.flag;
     var desc = e.detail.value.textarea;
     var temp1 = that.data.temp1;
+    if(desc==""){
+      wx.showToast({
+        title: '请输出描述信息.',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(desc);

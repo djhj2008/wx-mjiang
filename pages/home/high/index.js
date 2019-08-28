@@ -39,6 +39,14 @@ Page({
     var flag = e.detail.value.flag;
     var desc = e.detail.value.textarea;
     var temp1 = that.data.temp1;
+    if (desc == "") {
+      wx.showToast({
+        title: '请输出描述信息.',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }    
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(desc);
@@ -47,8 +55,8 @@ Page({
       devid: that.data.devid,
       aip: aip,
       msg: desc,
-      temp1: temp1
-
+      temp1: temp1,
+      flag: flag
     };
 
     console.log(highset_URL, data)
@@ -71,24 +79,29 @@ Page({
       method: "POST",
       data: data,
       success: function (res) {
-        console.log(res.data.Dev.ret);
+        console.log(res.data.Dev);
         wx.hideLoading();
         wx.hideNavigationBarLoading(); //完成停止加载
         wx.stopPullDownRefresh(); //停止下拉刷新
         var ret_message = res.data.Dev.ret.ret_message
         if (ret_message == "success") {
+          //getApp().globalData.tabindex = 0;
           wx.showToast({
             title: '成功.',
             icon: 'success',
             duration: 2000
           });
         } else {
+          //getApp().globalData.tabindex = 0;
           wx.showToast({
-            title: '失败,设备已存在.',
+            title: '失败.',
             icon: 'fail',
             duration: 2000
           });
         }
+        wx.switchTab({
+          url: '/pages/home/home?'
+        })
       },
       fail: function (res) {
       }

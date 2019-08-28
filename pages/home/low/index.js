@@ -1,4 +1,4 @@
-// pages/home/low/index.js
+ // pages/home/low/index.js
 var aip = getApp().globalData.aip;
 var lowset_URL = getApp().globalData.lowset_URL;
 Page({
@@ -38,6 +38,14 @@ Page({
     var flag = e.detail.value.flag;
     var desc = e.detail.value.textarea;
     var temp1 = that.data.temp1;
+    if (desc == "") {
+      wx.showToast({
+        title: '请输出描述信息.',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }    
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(desc);
@@ -46,7 +54,8 @@ Page({
       devid: that.data.devid,
       aip: aip,
       msg: desc,
-      temp1: temp1
+      temp1: temp1,
+      flag:flag
 
     };
     console.log(lowset_URL, data)
@@ -86,7 +95,9 @@ Page({
             duration: 2000
           });
         }
-        that.onShow();
+        wx.switchTab({
+          url: '/pages/home/home?'
+        })
       },
       fail: function (res) {
       }
@@ -159,13 +170,13 @@ Page({
    */
   onPullDownRefresh: function () {
 
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
   },
 
   /**

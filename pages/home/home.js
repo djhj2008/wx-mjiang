@@ -30,20 +30,21 @@ Page({
     devcount: 0,
     envtemp1: null,
     envtemp2: null,
+    devlen:[],
     devlist1: [],
     devlist2: [],
     devlist3: [],
     subTitle: null,
     scrollLeft: 0
   },
+
   tabSelect(e) {
+    getApp().globalData.tabindex = e.currentTarget.dataset.id;
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
   },
-
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -137,6 +138,13 @@ Page({
    */
   onShow: function () {
     var that = this;
+    var index = getApp().globalData.tabindex;
+    console.log("onLoad index:" + index);
+    if (index > 0) {
+      this.setData({
+        TabCur: index,
+      })
+    }
 
     wx.getStorage({
       key: 'enduser',
@@ -146,32 +154,24 @@ Page({
         console.log(home_URL, data)
         that.requestData(home_URL, data);
         //that.requestValueData();
-
         setTimeout(function () {
-
           //that.requestAdData();
-
         }
           , 100)
-
-
       },
       fail: function (res) {
         wx.reLaunch({
           url: '../login/login'
         })
         wx.clearStorage()
-
-
       },
-
     })
   },
 
   requestData: function (url, data) {
     var that = this
     wx.showLoading({
-      title: '登录中...',
+      title: '查询中...',
       icon: "loading",
       duration: 10000
     })
@@ -218,14 +218,44 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log("onPullDownRefresh");
+    wx.stopPullDownRefresh();
+    var that = this;
+    var index = getApp().globalData.tabindex;
+    console.log("onLoad index:" + index);
+    if (index > 0) {
+      this.setData({
+        TabCur: index,
+      })
+    }
 
+    wx.getStorage({
+      key: 'enduser',
+      success: function (res) {
+        console.log(res.data)
+        var data = { userid: res.data.autoid, aip: aip };
+        console.log(home_URL, data)
+        that.requestData(home_URL, data);
+        //that.requestValueData();
+        setTimeout(function () {
+          //that.requestAdData();
+        }
+          , 100)
+      },
+      fail: function (res) {
+        wx.reLaunch({
+          url: '../login/login'
+        })
+        wx.clearStorage()
+      },
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log("onReachBottom");
   },
 
   /**

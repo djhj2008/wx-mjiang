@@ -66,7 +66,7 @@ Page({
   requestData: function (url, data) {
     var that = this;
     wx.showLoading({
-      title: '登录中...',
+      title: '查询中...',
       icon: "loading",
       duration: 10000
     })

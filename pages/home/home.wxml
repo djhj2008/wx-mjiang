@@ -22,7 +22,9 @@
 <scroll-view id="title7" scroll-x class="bg-white nav">
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      {{tabs[index]}}
+      <view wx:if="{{index==0}}">{{tabs[index]}}({{devlist1.length}})</view>
+      <view wx:elif="{{index==1}}">{{tabs[index]}}({{devlist2.length}})</view>
+      <view wx:else="{{index==2}}">{{tabs[index]}}({{devlist3.length}})</view>
     </view>
   </view>
 </scroll-view>

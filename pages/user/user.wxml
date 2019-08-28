@@ -11,13 +11,13 @@
   </view>
 
   <view class="cu-list menu margin-top-xs margin-bottom-xl shadow-lg radius">
-    <view class="cu-item arrow">
+    <view class="cu-item ">
       <navigator class="content" url="/pages/user/about/index" hover-class="none">
          <text class="cuIcon-profile text-green"></text>
         <text class="text-grey">关于我们</text>
       </navigator>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item ">
       <navigator class="content" url="/pages/login/login" hover-class="none">
         <text class="cuIcon-settings text-green"></text>
         <text class="text-grey">退出登录</text>

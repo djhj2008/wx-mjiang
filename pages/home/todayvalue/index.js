@@ -173,7 +173,7 @@ Page({
   requestData: function (url, data) {
     var that = this
     wx.showLoading({
-      title: '载入中...',
+      title: '绘制中...',
       icon: "loading",
       duration: 10000
     })

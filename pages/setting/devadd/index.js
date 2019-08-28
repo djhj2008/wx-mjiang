@@ -45,7 +45,7 @@ Page({
   requestData: function (url, data) {
     var that = this;
     wx.showLoading({
-      title: '登录中...',
+      title: '处理中...',
       icon: "loading",
       duration: 10000
     })
@@ -84,7 +84,7 @@ Page({
   requestData2: function (url, data) {
     var that = this;
     wx.showLoading({
-      title: '登录中...',
+      title: '处理中...',
       icon: "loading",
       duration: 10000
     })
