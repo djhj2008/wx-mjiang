@@ -85,13 +85,14 @@ Page({
     var devid = that.data.dev.devid;
     var psnid = that.data.dev.psn;
     var flag = that.data.flag;
+    var shed = e.detail.value.shed;
     console.log("bindFormSubmit");
     console.log(flag);
     console.log(sn);
     console.log(devid);
     console.log(psnid);
 
-    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn,flag:flag};
+    var data = { devid: devid, aip: aip, psnid: psnid ,sn:sn,flag:flag,shed:shed};
     console.log(devedit_URL, data)
     that.requestData2(devedit_URL, data);
   },

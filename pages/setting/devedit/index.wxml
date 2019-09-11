@@ -10,13 +10,17 @@
     </view>
   </view>
 <form bindsubmit="bindFormSubmit">
-	<view class="cu-form-group margin-top">
+	<!--view class="cu-form-group margin-top">
 		<view class="title">区域</view>
 		<input disabled='disabled'  value="{{dev.psninfo}}"></input>
-	</view>
+	</view-->
 	<view class="cu-form-group">
 		<view class="title">设备ID</view>
 		<input disabled='disabled'  value="{{dev.devid}}"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">舍号</view>
+		<input name="shed" placeholder="空" value="{{dev.shed}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">SN编码</view>
