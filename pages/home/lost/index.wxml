@@ -33,11 +33,7 @@
   <view class="itemView">
 </view>
 </form>
-<view class="cu-bar bg-white solid-bottom">
-  <view class="action">
-    <text class="cuIcon-title text-blue"></text>处理记录
-  </view>
-</view>
+
 
 <block  wx:for='{{desclist}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
 <view class="itemView">
