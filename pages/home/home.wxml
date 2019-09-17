@@ -10,6 +10,7 @@
 <view id="title2" class="home_content" hidden="{{TabCur != 0}}">{{devlist1.length}}</view>
 <view id="title2" class="home_content" hidden="{{TabCur != 1}}">{{devlist2.length}}</view>
 <view id="title2" class="home_content" hidden="{{TabCur != 2}}">{{devlist3.length}}</view>
+<view id="title2" class="home_content" hidden="{{TabCur != 3}}">{{devlist4.length}}</view>
 <view id="title3" class="home_foot{{TabCur}}">
 {{subTitles[TabCur]}}
 </view>
@@ -21,10 +22,11 @@
 <view id="title6" class="weui-tab">
 <scroll-view id="title7" scroll-x class="bg-white nav">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      <view wx:if="{{index==0}}">{{tabs[index]}}({{devlist1.length}})</view>
-      <view wx:elif="{{index==1}}">{{tabs[index]}}({{devlist2.length}})</view>
-      <view wx:else="{{index==2}}">{{tabs[index]}}({{devlist3.length}})</view>
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      <view wx:if="{{index==0}}">{{tabs[index]}}</view>
+      <view wx:elif="{{index==1}}">{{tabs[index]}}</view>
+      <view wx:elif="{{index==2}}">{{tabs[index]}}</view>
+      <view wx:else="{{index==3}}">{{tabs[index]}}</view>
     </view>
   </view>
 </scroll-view>
@@ -123,6 +125,40 @@
             <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
             <view class="margin-bottom radius margin-right-lg">
             <button class="cu-btn bg-blue sm edit_item" bindtap="lowsetting" data-dev='{{item}}'>
+            处理
+            </button>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class="weui-tab__content" hidden="{{TabCur != 3}}">
+  <scroll-view class="scrollView" style='height: {{scrollViewHeight + "px"}}' scroll-y="true">
+    <block  wx:for='{{devlist4}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+      <view class="itemView">
+          <view class="flex  margin-left-sm align-center justify-between">
+            <view class="flex-sub margin-top-xs margin-left-xs radius">
+              <view class="list_sn" wx:if="{{item.sn==null}}">SN:空</view>
+              <view class="list_sn" wx:elif="{{item.sn==''}}">SN:空</view>
+              <view class="list_sn" wx:else="{{item.sn==''}}">SN:{{item.sn}}</view>
+            </view>
+            <view class="flex-sub margin-top-xs radius"><view class="list_sn">ID:{{item.devid}}</view></view>
+            <view class="flex-sub margin-top-xs radius"><view class="batteryfull"></view></view>
+          </view>
+          <view class="flex margin-left-sm align-center">
+            <view class="flex-sub  radius">
+            <button class="cu-btn bg-grey lg" bindtap="todayvalue" data-dev='{{item}}'>{{item.temp1}}</button>
+            </view>
+            <view class="flex-twice  radius"><view class="list_days">异常:{{item.days}}天</view></view>
+          </view>
+          <view class="flex margin-lr-sm margin-tb-sm">
+          <view class="divLinesub"></view>
+          </view> 
+          <view class="flex margin-left-sm justify-between align-center">
+            <view class="margin-bottom radius "><view class="list_time">{{item.date}}</view></view>
+            <view class="margin-bottom radius margin-right-lg">
+            <button class="cu-btn bg-blue sm edit_item" bindtap="lostsetting" data-dev='{{item}}'>
             处理
             </button>
             </view>

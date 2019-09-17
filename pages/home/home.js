@@ -20,8 +20,8 @@ Page({
     scrollViewHeight: 0,
     TabCur: 0,
     scrollLeft: 0,
-    tabs: ["温度异常", "治疗中", "低温异常"],
-    subTitles: ["高温数量", "治疗数量", "低温数量"],
+    tabs: ["温度异常", "治疗中", "低温异常", "数据异常"],
+    subTitles: ["高温数量", "治疗数量", "低温数量", "异常数量"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -34,6 +34,7 @@ Page({
     devlist1: [],
     devlist2: [],
     devlist3: [],
+    devlist4: [],
     subTitle: null,
     scrollLeft: 0
   },
@@ -118,6 +119,14 @@ Page({
     })
   },
 
+  lostsetting: function (e) {
+    var dev = e.currentTarget.dataset.dev;
+    console.log(dev);
+    wx.navigateTo({
+      url: '/pages/home/lost/index?' + 'devid=' + dev.devid + '&psnid=' + dev.psnid + '&temp1=' + dev.temp1,
+    })
+  },
+
   todayvalue: function (e) {
     var dev = e.currentTarget.dataset.dev;
     console.log(dev);
@@ -192,6 +201,7 @@ Page({
           devlist1: res.data.Dev.ret.devs.dev1,
           devlist2: res.data.Dev.ret.devs.dev2,
           devlist3: res.data.Dev.ret.devs.dev3,
+          devlist4: res.data.Dev.ret.devs.dev4,
           envtemp1: res.data.Dev.ret.temp.temp1,
           envtemp2: res.data.Dev.ret.temp.temp2,
         })

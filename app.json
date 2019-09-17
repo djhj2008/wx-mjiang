@@ -12,7 +12,8 @@
     "pages/setting/devedit/index",
     "pages/user/about/index",
     "pages/user/password/index",
-    "pages/user/pushmsg/index"
+    "pages/user/pushmsg/index",
+    "pages/home/lost/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

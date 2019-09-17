@@ -1,0 +1,58 @@
+<cu-custom id="navbar" bgColor="bg-gradual-blue" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">{{psninfo}}</view>
+</cu-custom>
+<view class="page bg-white">
+  <view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="text-lg padding">
+        <text class="text-black">温度异常处理</text>
+      </view>
+    </view>
+  </view>
+
+<form bindsubmit="bindFormSubmit">
+  <radio-group class="radio-group flex solid-bottom padding justify-around" name="flag">
+    <view class="flex-sub  margin-left-lg">
+      <radio class="green radio" value="0" checked></radio><view class="cu-tag bg-green margin-left-sm">回收</view>
+    </view>
+	</radio-group>
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>记录(设备ID:{{devid}},温度:{{temp1}})
+  </view>
+</view>
+	<view class="cu-form-group solid-bottom">
+		<textarea maxlength="-1" name="textarea" placeholder="请输入"></textarea>
+	</view>
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue" form-type="submit" >提交
+  </button>
+  </view>
+  <view class="itemView">
+</view>
+</form>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>处理记录
+  </view>
+</view>
+
+<block  wx:for='{{desclist}}' wx:key='scroll' wx:for-index='idx'  wx:for-item='item'>
+<view class="itemView">
+    <view class="flex margin-left-sm margin-top-sm justify-between align-center">
+      <view class="flex-sub  radius" wx:if="{{item.state==0}}" ><button class="cu-btn bg-green lg">{{item.temp1}}</button></view>
+      <view class="flex-sub  radius" wx:if="{{item.state==1}}" ><button class="cu-btn bg-orange lg">{{item.temp1}}</button></view>
+      <view class="flex-sub  radius" wx:if="{{item.state==2}}" ><button class="cu-btn bg-grey lg">{{item.temp1}}</button></view>
+      <view class="flex-twice  radius"><view class="list_days">{{item.msg}}</view></view>
+    </view>
+    <view class="flex margin-lr-sm margin-tb-sm">
+      <view class="divLinesub"></view>
+    </view>
+    <view class="flex margin-left-sm justify-between align-center">
+      <view class="margin-bottom radius "><view class="list_time">{{item.time}}</view></view>
+    </view>
+</view>
+</block>
+</view>

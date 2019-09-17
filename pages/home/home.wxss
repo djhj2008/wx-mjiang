@@ -26,6 +26,11 @@
     text-align: center;
     color: lightblue;
 }
+.home_foot3{
+    font-size: 16px;
+    text-align: center;
+    color: lightgray;
+}
 .scrollView{
   display: flex;
   flex: 1pt;
